@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADOC Viewer</title>
+
+  <link rel="stylesheet" href="./app.css">
+</head>
+
+<body>
+  <div id="file">
+    <input type="file" id="document" accept="pdf" onchange="openDocument()" />
+    <span>Open ADOC file</span>
+  </div>
+
+  <ul id="browser">
+  </ul>
+
+  <script src="./zip.min.js"></script>
+  <script src="./adoc.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+
+</html>
